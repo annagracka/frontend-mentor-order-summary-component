@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e0e8ff;
+  background-image: url("./../images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  font-family: "Red Hat Display";
+  height: 100vh;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  text-align: center;
+  background-color: #FFF;
+  border-radius: 25px;
+  overflow: hidden;
+  max-width: 450px;
+}
+
+.order-summary {
+  width: 80%;
+  line-height: 1.5;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.order {
+  display: grid;
+}
+
+.order__plan-price {
+  background-color: #f5f7ff;
+  border-radius: 15px;
+}
+
+.payment {
+  width: 75%;
+}
+
+.container__button {
+  margin-top: 20px;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 0;
+  width: 75%;
+}
+
+.container__button--proceed {
+  color: #e0e8ff;
+  background-color: #3829e0;
+}
+
+.container__button--cancel {
+  background-color: #f5f7ff;
+}

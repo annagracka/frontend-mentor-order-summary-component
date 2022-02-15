@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "gulp-sass": "^5.1.0",
+    "npm": "^8.5.0"
+  },
+  "name": "order-summary-component",
+  "description": "![Design preview for the Order summary card coding challenge](./design/desktop-preview.jpg)",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annagaca/frontend-mentor-order-summary-component.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annagaca/frontend-mentor-order-summary-component/issues"
+  },
+  "homepage": "https://github.com/annagaca/frontend-mentor-order-summary-component#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "sass": "^1.49.7"
+  }
+}

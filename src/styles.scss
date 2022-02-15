@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$font-stack: 'Red Hat Display';
+$color-primary-pale: hsl(225, 100%, 94%);
+$color-primary-bright: hsl(245, 75%, 52%);
+
+$color-neutral-pale: hsl(225, 100%, 98%);
+$color-neutral-desaturated: hsl(224, 23%, 55%);
+$color-neutral-dark: hsl(223, 47%, 23%);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+  background-color: $color-primary-pale;
+    background-image: url("./../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    font-family: $font-stack;
+    height: 100vh;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  //  zasada pojedynczej odpowiedialnosci!
+  // margin-left: auto;
+  // margin-right: auto;
+  text-align: center;
+  background-color: #FFF;
+  border-radius: 25px;
+  overflow: hidden;
+  max-width: 450px;
+}
+
+.order-summary {
+  width: 80%;
+  line-height: 1.5;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.order {
+  display: grid;
+}
+
+.order__plan-price {
+  background-color: $color-neutral-pale;
+  border-radius: 15px;
+}
+
+.payment {
+  width: 75%;
+}
+
+.container__button {
+  margin-top: 20px; // tutaj jest pozyckonowanie, kt nie powinno byc
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 0;
+  width: 75%;
+}
+
+.container__button--proceed {
+  color: $color-primary-pale;
+  background-color: $color-primary-bright;
+}
+
+.container__button--cancel {
+  background-color: $color-neutral-pale;
+}
+
