@@ -4,35 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
-  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <!-- displays site properly based on user's device
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
   <link rel="stylesheet" href="./src/styles.css">
 
   <title>Frontend Mentor | Order summary card</title>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container center">
     <img class="container__image" src="./images/illustration-hero.svg">
     <div class="container__order-summary center order-summary">
       <h1 class="container__title title">Order Summary</h1>
       <p class="container__description">You can now listen to millions of songs, audiobooks,
         and podcasts on any device anywhere you like!</p>
       <div class="container__order order">
-        <p class="order_plan-price">Annual Plan</p>
         <img class="order__icon" src="./images/icon-music.svg" alt="icon music">
+        <p class="order_plan">Annual Plan</p>
         <p class="order__price">$59.99/year</p>
         <p class="order__change-plan"><a class="order__link" href="#">Change</a></p>
       </div>
     </div>
-    <button type="button" class="container__button container__button--proceed">Proceed to Payment</button>
-    <button type="button" class="container__button container__button--cancel">Cancel Order</button>
-  </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="container__btn">
+      <button type="button" class="btn btn--proceed">Proceed to Payment</button>
+      <button type="button" class="btn btn--cancel">Cancel Order</button>
+    </div>
   </div>
 </body>
 

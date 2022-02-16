@@ -4,20 +4,35 @@ $font-stack: 'Red Hat Display';
 $color-primary-pale: hsl(225, 100%, 94%);
 $color-primary-bright: hsl(245, 75%, 52%);
 
+$color-secondary-bright: #766CF1;
+
 $color-neutral-pale: hsl(225, 100%, 98%);
 $color-neutral-desaturated: hsl(224, 23%, 55%);
 $color-neutral-dark: hsl(223, 47%, 23%);
 
+html {
+  background-color: $color-primary-pale;
+  background-image: url("./../images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
-  background-color: $color-primary-pale;
-    background-image: url("./../images/pattern-background-desktop.svg");
-    background-repeat: no-repeat;
     font-family: $font-stack;
     height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-neutral-desaturated;
 }
 
 .center {
@@ -26,18 +41,20 @@ body {
 }
 
 .container {
-  //  zasada pojedynczej odpowiedialnosci!
-  // margin-left: auto;
-  // margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   background-color: #FFF;
   border-radius: 25px;
   overflow: hidden;
-  max-width: 450px;
+  max-width: 420px;
+  height: 650px;
 }
 
 .order-summary {
-  width: 80%;
+  width: 320px;
   line-height: 1.5;
 }
 
@@ -47,18 +64,47 @@ body {
 
 .order {
   display: grid;
-}
-
-.order__plan-price {
   background-color: $color-neutral-pale;
   border-radius: 15px;
+}
+
+.container__order {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+
+.order__icon {
+  grid-area: 1 / 1 / 3 / 2;
+  padding: 20px;
+  // width: 45px;
+}
+
+.order_plan {
+  font-weight: 900;
+  grid-area: 1 / 2 / 2 / 3;
+  padding-top: 20px;
+}
+
+.order__price {
+  grid-area: 2 / 2 / 3 / 3;
+  padding-bottom: 20px;
+}
+
+.order__change-plan {
+  grid-area: 1 / 3 / 3 / 4;
+  padding: 20px;
 }
 
 .payment {
   width: 75%;
 }
 
-.container__button {
+.btn {
   margin-top: 20px; // tutaj jest pozyckonowanie, kt nie powinno byc
   border-style: none;
   border-radius: 10px;
@@ -69,12 +115,13 @@ body {
   width: 75%;
 }
 
-.container__button--proceed {
+.btn--proceed {
   color: $color-primary-pale;
   background-color: $color-primary-bright;
+  box-shadow: 0px 10px 30px -12.5px rgba(118, 108, 241, 1);
 }
 
-.container__button--cancel {
+.btn--cancel {
   background-color: $color-neutral-pale;
 }
 
