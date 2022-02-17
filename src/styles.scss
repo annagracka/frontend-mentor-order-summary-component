@@ -1,14 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
-
-$font-stack: 'Red Hat Display';
-$color-primary-pale: hsl(225, 100%, 94%);
-$color-primary-bright: hsl(245, 75%, 52%);
-
-$color-secondary-bright: #766CF1;
-
-$color-neutral-pale: hsl(225, 100%, 98%);
-$color-neutral-desaturated: hsl(224, 23%, 55%);
-$color-neutral-dark: hsl(223, 47%, 23%);
+@import "colors";
+@import "fonts";
 
 html {
   background-color: $color-primary-pale;
@@ -18,31 +9,26 @@ html {
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    font-family: $font-stack;
-    color: $color-neutral-dark;
-    height: 100vh;
+  font-family: $font-stack;
+  color: $color-neutral-dark;
+  height: 100vh;
 }
 
 h1 {
   font-size: 28px;
+  font-weight: 900;
 }
 
 p {
-  font-size: 16px;
-}
-
-a:hover {
   color: $color-neutral-desaturated;
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
 }
 
 .container {
@@ -54,116 +40,165 @@ a:hover {
   background-color: #FFF;
   border-radius: 25px;
   overflow: hidden;
-  max-width: 28.125em;
+  max-width: 27.875em;
   height: 700px;
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__summary {
+    margin: 2.5em 2.8125em;
+  }
+
+  &__order {
+    align-items: center;
+    line-height: 1.25;
+    margin: 0.5em 0;
+  }
 }
 
-.container__image {
-  max-width: 100%;
-}
-
-.order-summary {
-  margin: 1.5em 2.8125em;
-}
-
-.title {
-  font-weight: 900;
-  line-height: 2.5;
-}
-
-.container__description {
-  color: $color-neutral-desaturated;
-  line-height: 1.65;
-}
-
-.container__order {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
-  align-items: center;
-  line-height: 1.25;
-  margin: 0.5em 0;
+.summary {
+  &__description {
+    margin-top: 1.3em;
+  }
 }
 
 .order {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
   background-color: $color-neutral-pale;
   border-radius: 15px;
+  margin: 1.5em 0;
+
+  &__icon {
+    grid-area: 1 / 1 / 3 / 2;
+    padding: 22.5px;
+  }
+
+  &__plan {
+    grid-area: 1 / 2 / 2 / 3;
+    padding-top: 20px;
+    text-align: left;
+    color: $color-neutral-dark;
+    font-weight: 900;
+  }
+
+  &__price {
+    grid-area: 2 / 2 / 3 / 3;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+
+  &__change-plan {
+    grid-area: 1 / 3 / 3 / 4;
+    padding: 1.5625em;
+  }
+
+  &__link {
+    font-size: 13.5px;
+    font-weight: 900;
+    color: $color-primary-bright;
+  }
 }
 
-.order__icon {
-  grid-area: 1 / 1 / 3 / 2;
-  padding: 22.5px 25px;
-  // width: 45px;
-}
-
-.order_plan {
-  font-weight: 900;
-  grid-area: 1 / 2 / 2 / 3;
-  padding-top: 20px;
-  text-align: left;
-}
-
-.order__price {
-  grid-area: 2 / 2 / 3 / 3;
-  padding-bottom: 20px;
-  text-align: left;
-  color: $color-neutral-desaturated;
-}
-
-.order__change-plan {
-  grid-area: 1 / 3 / 3 / 4;
-  padding: 1.5625em;
-}
-
-.order__link {
-  font-size: 13.5px;
-  font-weight: 900;
-  color: $color-primary-bright;
-}
-
-.payment {
-  width: 75%;
+.summary__btn {
+  margin-top: 2.25em;
 }
 
 .btn {
-  margin: 8px 0;
+  margin: 17.5px 0;
   border-style: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
-  padding: 17.5px 0;
-  width: 78.5%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .btn--proceed {
-  color: $color-primary-pale;
   background-color: $color-primary-bright;
-  box-shadow: 0px 10px 30px -12.5px $color-secondary-bright;
+  box-shadow: 0px 12.5px 30px -10px $color-secondary-bright;
+  a {
+    color: $color-neutral-pale;
+  }
 }
 
 .btn--cancel {
-  background-color: $color-neutral-pale;
-  color: $color-neutral-desaturated;
+  a {
+    color: $color-neutral-desaturated;
+  }
 }
 
 @media screen and (max-width: 400px) {
   h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
-
-  .container {
-    max-width: 20.625em;
-    height: 35.625em;
-  }
-
-  .container__description {
+  
+  p {
     font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
   }
-
-  .container__order {
-    width: fit-content;
+  
+  .container {
+    width: 20.625em;
+    height: 35.625em;
+  
+    &__summary {
+      margin: 1.5em 1.5em;
+    }
+  
+    &__order {
+      line-height: 1.25;
+      margin: 0.5em 0;
+    }
+  }
+  
+  .summary {
+    &__description {
+      font-size: 16px;
+      margin-top: 1em;
+    }
+  }
+  
+  .order {
+    margin-top: 1.5em;
+  
+    &__icon {
+      padding: 22.5px;
+    }
+  
+    &__plan {
+      padding-top: 22px;
+    }
+  
+    &__price {
+      padding-bottom: 22px;
+    }
+  
+    &__link {
+      font-size: 13px;
+    }
+  }
+  
+  .summary__btn {
+    margin: 15px 0;
+  }
+  
+  .btn {
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
